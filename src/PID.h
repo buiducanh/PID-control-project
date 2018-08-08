@@ -2,7 +2,7 @@
 #define PID_H
 
 class PID {
-public:
+  public:
   /*
   * Errors
   */
@@ -12,10 +12,10 @@ public:
 
   /*
   * Coefficients
-  */ 
-  double Kp;
-  double Ki;
-  double Kd;
+  */
+  double _Kp;
+  double _Ki;
+  double _Kd;
 
   /*
   * Constructor
@@ -31,6 +31,11 @@ public:
   * Initialize PID.
   */
   void Init(double Kp, double Ki, double Kd);
+
+  /*
+   * Set coefficients for twiddling
+   */
+  void setCoeffs(double p[3]);
 
   /*
   * Update the PID error variables given cross track error.
